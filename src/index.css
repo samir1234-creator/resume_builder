@@ -1,0 +1,174 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=JetBrains+Mono:wght@400;500&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Playfair Display", ui-serif, Georgia, serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+  
+  --color-brand-bg: #F7F7F5;
+  --color-brand-text: #0F172A;
+
+  /* Override slate palette with Hex for PDF compatibility */
+  --color-slate-50: #f8fafc;
+  --color-slate-100: #f1f5f9;
+  --color-slate-200: #e2e8f0;
+  --color-slate-300: #cbd5e1;
+  --color-slate-400: #94a3b8;
+  --color-slate-500: #64748b;
+  --color-slate-600: #475569;
+  --color-slate-700: #334155;
+  --color-slate-800: #1e293b;
+  --color-slate-900: #0f172a;
+  --color-slate-950: #020617;
+
+  /* Redefining other grays for total safety */
+  --color-gray-50: #f9fafb;
+  --color-gray-100: #f3f4f6;
+  --color-gray-200: #e5e7eb;
+  --color-gray-300: #d1d5db;
+  --color-gray-400: #9ca3af;
+  --color-gray-500: #6b7280;
+  --color-gray-600: #4b5563;
+  --color-gray-700: #374151;
+  --color-gray-800: #1f2937;
+  --color-gray-900: #111827;
+
+  --color-zinc-50: #fafafa;
+  --color-zinc-100: #f4f4f5;
+  --color-zinc-200: #e4e4e7;
+  --color-zinc-300: #d4d4d8;
+  --color-zinc-400: #a1a1aa;
+  --color-zinc-500: #71717a;
+  --color-zinc-600: #52525b;
+  --color-zinc-700: #3f3f46;
+  --color-zinc-800: #27272a;
+  --color-zinc-900: #18181b;
+
+  --color-neutral-50: #fafafa;
+  --color-neutral-100: #f5f5f5;
+  --color-neutral-200: #e5e5e5;
+  --color-neutral-300: #d4d4d4;
+  --color-neutral-400: #a3a3a3;
+  --color-neutral-500: #737373;
+  --color-neutral-600: #525252;
+  --color-neutral-700: #404040;
+  --color-neutral-800: #262626;
+  --color-neutral-900: #171717;
+
+  /* Other used colors */
+  --color-blue-50: #eff6ff;
+  --color-blue-100: #dbeafe;
+  --color-blue-400: #60a5fa;
+  --color-blue-500: #3b82f6;
+  --color-blue-600: #2563eb;
+  
+  --color-red-50: #fef2f2;
+  --color-red-100: #fee2e2;
+  --color-red-500: #ef4444;
+  --color-red-700: #b91d1b;
+
+  --color-green-500: #22c55e;
+  --color-orange-500: #f97316;
+
+  /* Redefining OTHER core variables to prevent oklch/oklab leakage */
+  --tw-ring-color: rgba(59, 130, 246, 0.5);
+  --tw-ring-offset-color: #ffffff;
+  --tw-shadow-color: rgba(0, 0, 0, 0);
+  --tw-outline-color: rgba(0, 0, 0, 1);
+  
+  /* Fallback for any modern color interpolation */
+  --tw-gradient-from: #ffffff00;
+  --tw-gradient-to: #ffffff00;
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+
+  /* Force standard shadows */
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+  --shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  --shadow-inner: inset 0 2px 4px 0 rgba(0, 0, 0, 0.06);
+
+  /* Overriding EVERY possible modern color space trigger */
+  --color-black: #000000;
+  --color-white: #ffffff;
+  --color-transparent: transparent;
+  --color-current: currentColor;
+  --color-inherit: inherit;
+}
+
+@layer base {
+  /* STATIC OVERRIDES FOR PDF COMPATIBILITY */
+  /* This forces Tailwind v4 to use standard Hex instead of oklch/color-mix */
+  
+  .bg-white { background-color: #ffffff !important; }
+  .bg-black { background-color: #000000 !important; }
+  .bg-transparent { background-color: transparent !important; }
+  
+  .bg-slate-50 { background-color: #f8fafc !important; }
+  .bg-slate-100 { background-color: #f1f5f9 !important; }
+  .bg-slate-200 { background-color: #e2e8f0 !important; }
+  .bg-slate-300 { background-color: #cbd5e1 !important; }
+  .bg-slate-400 { background-color: #94a3b8 !important; }
+  .bg-slate-500 { background-color: #64748b !important; }
+  .bg-slate-600 { background-color: #475569 !important; }
+  .bg-slate-700 { background-color: #334155 !important; }
+  .bg-slate-800 { background-color: #1e293b !important; }
+  .bg-slate-900 { background-color: #0f172a !important; }
+  .bg-slate-950 { background-color: #020617 !important; }
+
+  .text-white { color: #ffffff !important; }
+  .text-black { color: #000000 !important; }
+  .text-slate-50 { color: #f8fafc !important; }
+  .text-slate-100 { color: #f1f5f9 !important; }
+  .text-slate-200 { color: #e2e8f0 !important; }
+  .text-slate-300 { color: #cbd5e1 !important; }
+  .text-slate-400 { color: #94a3b8 !important; }
+  .text-slate-500 { color: #64748b !important; }
+  .text-slate-600 { color: #475569 !important; }
+  .text-slate-700 { color: #334155 !important; }
+  .text-slate-800 { color: #1e293b !important; }
+  .text-slate-900 { color: #0f172a !important; }
+  .text-slate-950 { color: #020617 !important; }
+
+  .border-white { border-color: #ffffff !important; }
+  .border-slate-50 { border-color: #f8fafc !important; }
+  .border-slate-100 { border-color: #f1f5f9 !important; }
+  .border-slate-200 { border-color: #e2e8f0 !important; }
+  .border-slate-300 { border-color: #cbd5e1 !important; }
+  .border-slate-400 { border-color: #94a3b8 !important; }
+  .border-slate-500 { border-color: #64748b !important; }
+  .border-slate-600 { border-color: #475569 !important; }
+  .border-slate-700 { border-color: #334155 !important; }
+  .border-slate-800 { border-color: #1e293b !important; }
+  .border-slate-900 { border-color: #0f172a !important; }
+
+  .decoration-slate-100 { text-decoration-color: #f1f5f9 !important; }
+  .decoration-slate-900 { text-decoration-color: #0f172a !important; }
+
+  .shadow-sm { box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05) !important; }
+  .shadow-md { box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1) !important; }
+  .shadow-lg { box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1) !important; }
+  .shadow-xl { box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1) !important; }
+  .shadow-2xl { box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25) !important; }
+
+  body {
+    @apply bg-brand-bg text-brand-text font-sans antialiased;
+  }
+}
+
+/* Custom scrollbar for editorial feel */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #E2E8F0;
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #CBD5E1;
+}
